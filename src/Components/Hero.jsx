@@ -37,11 +37,11 @@ export default function Hero() {
 
         <div className="flex gap-4 mt-4">
           <span className="flex items-center gap-2 text-sm text-neutral-300">
-            <span className="w-2 h-2 rounded-sm bg-gradient-to-r from-neon1 to-neon2 inline-block shadow" />{" "}
+            <span className="w-2 h-2 rounded-sm bg-linear-to-r from-neon1 to-neon2 inline-block shadow" />{" "}
             Real-time 3D
           </span>
           <span className="flex items-center gap-2 text-sm text-neutral-300">
-            <span className="w-2 h-2 rounded-sm bg-gradient-to-r from-neon2 to-neon1 inline-block shadow" />{" "}
+            <span className="w-2 h-2 rounded-sm bg-linear-to-r from-neon2 to-neon1 inline-block shadow" />{" "}
             Interactive UI
           </span>
         </div>
