@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #06060b;
+  --neon1: #6df0ff;
+  --neon2: #b36bff;
+  --mont: 'Montserrat', 'sans-serif';
+  --roboto: 'Roboto', 'sans-serif';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme inline {
+  --color-neon1: var(--neon1);
+  --color-neon2: var(--neon2);
+  --color-dark: var(--bg);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.extrude {
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 4px rgba(0, 0, 0, 0.7),
+    0 4px 18px rgba(99, 57, 255, 0.14);
+}
+
+/* for the 3d scene */
+@keyframes floatText {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.headline-float {
+  animation: floatText 6s ease-in-out infinite;
+  text-shadow: 0 2px 18px rgba(99, 57, 255, 0.16), 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* for the about */
+/* src/index.css (أو موجود في الملف العام) */
+
+/* headline float (نعمّل تأثير طافي خفيف) */
+@keyframes floatText {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.headline-float {
+  animation: floatText 6s ease-in-out infinite;
+  text-shadow: 0 2px 18px rgba(99, 57, 255, 0.12), 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* reveal */
+.about-hidden {
+  opacity: 0;
+  transform: translateY(28px) scale(0.995);
+  transition: transform 520ms cubic-bezier(.2, .9, .2, 1), opacity 520ms;
+}
+
+.about-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* contact-like fake shadow below cards (CSS helper) */
+.shadow-contact {
+  filter: blur(28px);
+  transform: translateZ(0);
+}
+
+/* hover glow overlay */
+.about-hover-glow {
+  transition: box-shadow 260ms ease, background 260ms ease, opacity 260ms;
+}
+
+article:hover .about-hover-glow {
+  box-shadow: 0 30px 80px rgba(99, 57, 255, 0.08);
+  background: linear-gradient(90deg, rgba(109, 240, 255, 0.03), rgba(179, 107, 255, 0.02));
+  opacity: 1;
+}
+
+/* small GPU optimization */
+.transform-gpu {
+  transform: translateZ(0);
+}
